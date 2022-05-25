@@ -1,5 +1,6 @@
 import React from "react";
 import './Book1.css'
+import {Visibility} from "@material-ui/icons";;
 
 function Book1() {
   return (
@@ -108,10 +109,18 @@ function Book1() {
            <label class="labellabelsuccess">Electrician</label><br/>
             <label class="labellabelprimary">MCB and fuse</label><br/>
            </td>
+           <td className="textdd">₹ 269</td>
+           <td className="textdd">
+          <a   className="btnbtnprimary" >
+           <i className="fafaeye">
+           <Visibility fontSize="small"/>Short View</i></a>
+            <a   className="btnbtndangerbtn" title="Edit"><i className="fafaeye">
+            <Visibility fontSize="small"/>View</i></a>
+              </td>
                                     
             </tr>
           </tbody>
-        </table>
+        </table> 
         </div>
       </form>
     </div>
