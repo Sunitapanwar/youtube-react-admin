@@ -117,7 +117,9 @@ function Book1() {
             <a   className="btnbtndangerbtn" title="Edit"><i className="fafaeye">
             <Visibility fontSize="small"/>View</i></a>
               </td>
-                                    
+
+                        
+                                   
             </tr>
           </tbody>
         </table> 
