@@ -2,11 +2,21 @@ import "./sidebar.css";
 import {
   Dashboard,Book,
   LocationOn,Category,PeopleAlt,Redeem,
-  StoreMallDirectory,DirectionsCar,AddShoppingCart,Build,CreateNewFolder,AddCircle,RemoveCircle
+  StoreMallDirectory,DirectionsCar,AddShoppingCart,Build,CreateNewFolder,AddCircle,RemoveCircle,ArrowDropDown
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
 
 export default function Sidebar() {
+ const [show, setShow] = useState(false);
+
+ 
+ function onClick(){
+   setShow(!show);
+ }
+
+
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
@@ -14,25 +24,56 @@ export default function Sidebar() {
           <div className="sidebarTitle">
             <ul className="sidebarList">
             <Link to="/" className="link">
-            <li className="sidebarListItem ">
+            <li className="sidebarListItem active">
               <Dashboard className="sidebarIcon" />
               Home
             </li>
             </Link>
-           
-            <Link to="/book" className="link">           
-              <li className="sidebarListItem active">
-                <Book className="sidebarIcon" />
+              <Link to="/book" className="link">           
+              <li className="sidebarListItem" onClick={onClick}>
+                <Book className="sidebarIcon"  />
                 Bookings
-              </li>
+              </li>{show && (
+                <div className="treeviewmenu" >
+                <ul  className="treeview">
+                <li className="treelist"><span>All Booking</span></li>
+                <li className="treelist"><span>New Booking</span></li>
+                <li className="treelist"><span>Confirm Booking</span></li>
+                <li className="treelist"><span>InActive Booking</span></li>
+                <li className="treelist"><span>Carts Booking</span></li></ul>
+                </div>
+   
+              )}
               </Link>
-              <li className="sidebarListItem">
+              <li className="sidebarListItem" onClick={onClick}>
                 <LocationOn className="sidebarIcon"/>
                 Location Manage
+                {/* {show && (
+                <div className="treeviewmenu" >
+                <ul  className="treeview">
+                <li className="treelist"><span>Country</span></li>
+                <li className="treelist"><span>States</span></li>
+                <li className="treelist"><span>Cities</span></li>
+                <li className="treelist"><span>Area</span></li></ul>
+                </div>
+   
+              )} */}
+                
               </li>
-              <li className="sidebarListItem">
+              <li className="sidebarListItem" onClick={onClick}>
                 <Category className="sidebarIcon"/>
                 Manage Categories
+                {/* {show && (
+                <div className="treeviewmenu" >
+                <ul  className="treeview">
+                <li className="treelist"><span>All Booking</span></li>
+                <li className="treelist"><span>New Booking</span></li>
+                <li className="treelist"><span>Confirm Booking</span></li>
+                <li className="treelist"><span>InActive Booking</span></li>
+                <li className="treelist"><span>Carts Booking</span></li></ul>
+                </div>
+   
+              )} */}
               </li>
               <li className="sidebarListItem">
                 <PeopleAlt className="sidebarIcon"/>

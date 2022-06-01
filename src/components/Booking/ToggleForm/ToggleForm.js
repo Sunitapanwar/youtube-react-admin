@@ -4,6 +4,21 @@ import { useState } from "react";
 import "./toggle.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
+
+const kk = async () => {
+  try {
+    const res = await fetch("https://fakestoreapi.com/products/");
+    if (!res.ok) {
+      throw new Error("something wrong");
+    }
+    const response = res.json();
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 function Toggleform() {
   const [show, setShow] = useState(false);
 

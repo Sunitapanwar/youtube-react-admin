@@ -1,6 +1,6 @@
 .sidebar {
   flex: 1;
-  height: calc(100vh - 0px);
+  height: calc(120vh - 0px);
   background-color: rgb(11, 6, 78);
   position: sticky;
   top: 50px;
@@ -26,11 +26,11 @@
 }
 
 .sidebarListItem {
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .sidebarListItem.active,
@@ -40,5 +40,18 @@
 
 .sidebarIcon{
     margin-right: 5px;
-    font-size: 20px !important;
+    font-size: 25px !important;
+}
+.treeviewmenu{
+  background-color: rgb(240, 240, 255);
+  border-radius: 5px;
+  color: rgb(11, 6, 78);
+}
+.treeview{
+  /* background-color: red; */
+}
+.treelist{
+  list-style-type: none;
+  padding: 5px;
+  /* background-color: white; */
 }
