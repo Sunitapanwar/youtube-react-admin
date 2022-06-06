@@ -9,7 +9,10 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
-import Book from './components/Booking/Book/Book';
+import ALLBOOKING  from './components/Booking/Allbooking/ALLBOOKING';
+import NEWBOOK from './components/Booking/newbooking/NEWBOOK';
+import ConfirmBook from "./components/Booking/confirmbook/ConfirmBook";
+import InactiveBook from "./components/Booking/Inactivebook/InactiveBook";
 
 function App() {
   return (
@@ -27,11 +30,20 @@ function App() {
           <Route path="/user/:userId">
             <User />
           </Route>
-          <Route path="/book">
-            <Book />
-          </Route>
           <Route path="/newUser">
             <NewUser />
+          </Route>
+          <Route path="/book">
+            <ALLBOOKING />
+          </Route>
+          <Route path="/newbook">
+            <NEWBOOK />
+          </Route>
+          <Route path="/confirmbook">
+            <ConfirmBook/>
+          </Route>
+          <Route path="/inactivebook">
+            <InactiveBook/>
           </Route>
           <Route path="/products">
             <ProductList />

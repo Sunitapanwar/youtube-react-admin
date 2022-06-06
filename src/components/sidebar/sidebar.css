@@ -1,10 +1,11 @@
 .sidebar {
   flex: 1;
-  height: calc(120vh - 0px);
+  height: calc(100vh - 50px);
   background-color: rgb(11, 6, 78);
   position: sticky;
   top: 50px;
 }
+
 
 .sidebarWrapper {
   padding: 20px;
@@ -16,17 +17,18 @@
 }
 
 .sidebarTitle {
-  font-size: 13px;
+  font-size: 15px;
   color: rgb(187, 186, 186);
 }
 
 .sidebarList {
   list-style: none;
-  padding: 5px;
+  padding: 3px;
 }
 
 .sidebarListItem {
-  padding: 10px;
+  margin-top: 5px;
+  padding: 4px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -35,7 +37,7 @@
 
 .sidebarListItem.active,
 .sidebarListItem:hover {
-  background-color: rgb(240, 240, 255);
+  background-color: white;
 }
 
 .sidebarIcon{
@@ -43,7 +45,7 @@
     font-size: 25px !important;
 }
 .treeviewmenu{
-  background-color: rgb(240, 240, 255);
+  background-color: white;
   border-radius: 5px;
   color: rgb(11, 6, 78);
 }
@@ -52,6 +54,8 @@
 }
 .treelist{
   list-style-type: none;
-  padding: 5px;
+  padding: 6px;
+  font-weight: 600;
+  cursor: pointer;
   /* background-color: white; */
 }

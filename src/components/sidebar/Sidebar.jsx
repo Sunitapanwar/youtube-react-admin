@@ -10,8 +10,13 @@ import { useState } from "react";
 
 export default function Sidebar() {
  const [show, setShow] = useState(false);
+ const [SHOW, SETSHOW]=useState(false);
+//  const [value, setValue] = useState();
 
- 
+function onClick(){
+  SETSHOW(!SHOW);
+}; 
+
  function onClick(){
    setShow(!show);
  }
@@ -29,11 +34,26 @@ export default function Sidebar() {
               Home
             </li>
             </Link>
-              <Link to="/book" className="link">           
+                       
               <li className="sidebarListItem" onClick={onClick}>
                 <Book className="sidebarIcon"  />
                 Bookings
               </li>{show && (
+                <div className="treeviewmenu" >
+                <ul  className="treeview">
+                <li className="treelist"> <Link to="/book" className="link"><span>All Booking</span> </Link></li>
+                <li className="treelist"><Link to="/newbook" className="link"><span>New Booking</span></Link></li>
+                <li className="treelist"><Link to="/confirmbook" className="link"><span>Confirm Booking</span></Link></li>
+                <li className="treelist"><Link to="/inactivebook" className="link"><span>InActive Booking</span></Link></li>
+                <li className="treelist"><Link to="/newbook" className="link"><span>Carts Booking</span></Link></li></ul>
+                </div>
+   
+              )}
+             
+              <li className="sidebarListItem">
+                <LocationOn className="sidebarIcon" onClick={onClick}/>
+                Location Manage
+                {SHOW && (
                 <div className="treeviewmenu" >
                 <ul  className="treeview">
                 <li className="treelist"><span>All Booking</span></li>
@@ -44,41 +64,26 @@ export default function Sidebar() {
                 </div>
    
               )}
-              </Link>
-              <li className="sidebarListItem" onClick={onClick}>
-                <LocationOn className="sidebarIcon"/>
-                Location Manage
-                {/* {show && (
-                <div className="treeviewmenu" >
-                <ul  className="treeview">
-                <li className="treelist"><span>Country</span></li>
-                <li className="treelist"><span>States</span></li>
-                <li className="treelist"><span>Cities</span></li>
-                <li className="treelist"><span>Area</span></li></ul>
-                </div>
-   
-              )} */}
-                
+          
               </li>
-              <li className="sidebarListItem" onClick={onClick}>
+              <Link to="/products" className="link">
+              <li className="sidebarListItem" >
                 <Category className="sidebarIcon"/>
                 Manage Categories
-                {/* {show && (
-                <div className="treeviewmenu" >
-                <ul  className="treeview">
-                <li className="treelist"><span>All Booking</span></li>
-                <li className="treelist"><span>New Booking</span></li>
-                <li className="treelist"><span>Confirm Booking</span></li>
-                <li className="treelist"><span>InActive Booking</span></li>
-                <li className="treelist"><span>Carts Booking</span></li></ul>
-                </div>
-   
-              )} */}
               </li>
+              </Link>
+              <Link to="/users" className="link">
               <li className="sidebarListItem">
                 <PeopleAlt className="sidebarIcon"/>
                 Manage Users
               </li>
+              </Link>
+              <Link to="/products" className="link">
+              <li className="sidebarListItem">
+                <Build className="sidebarIcon"/>
+                Manage Product
+              </li>
+              </Link>
               <li className="sidebarListItem">
                 <Redeem className="sidebarIcon"/>
                 Promocode
@@ -92,28 +97,8 @@ export default function Sidebar() {
                   Ser.Center Packages
               </li>
               <li className="sidebarListItem">
-                <AddShoppingCart  className="sidebarIcon"/>
-                Manage Vehicle
-              </li>
-              <li className="sidebarListItem">
-                <Build className="sidebarIcon"/>
-                Manage Product
-              </li>
-              <li className="sidebarListItem">
-                <CreateNewFolder className="sidebarIcon"/>
-                Manage Taxes
-              </li>
-              <li className="sidebarListItem">
-                <Build className="sidebarIcon"/>
-                Manage Leads
-              </li>
-              <li className="sidebarListItem">
                 <AddCircle className="sidebarIcon"/>
                 Training Status
-              </li>
-              <li className="sidebarListItem">
-                <RemoveCircle className="sidebarIcon"/>
-                Training Panel
               </li>
             </ul>
           </div>

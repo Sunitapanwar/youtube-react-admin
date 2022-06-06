@@ -1,31 +1,14 @@
 import React, { useState, useEffect } from "react";
-import "./Book1.css";
+import ToggleForm from '../ToggleForm/ToggleForm';
+import '../Allbooking/Allbooking.css';
 import { Visibility } from "@material-ui/icons";
 
-function Book1() {
-  const [data, setData] = useState();
-
-  console.log(data, "now ok");
-
-  useEffect(() => {
-    const sunita = async () => {
-      try {
-        const res = await fetch("https://fakestoreapi.com/products/");
-        if (!res.ok) {
-          console.log(res);
-          throw new Error("something wrong");
-        }
-        const response = await res.json();
-        setData(response);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    sunita();
-  }, []);
+function InactiveBook() {
 
   return (
+    <div className="tabletable">
     <div className="tableform">
+    <ToggleForm/>
       <form>
         <input
           name="_token"
@@ -97,34 +80,9 @@ function Book1() {
               </tr>
             </thead>
             <tbody>
-            {/* {
-                data.map((data, index)=>{
-                    return(
-                        <tr key={index}>
-                        <td className="textdd">
-                  <input
-                    type="checkbox"
-                    className="checkCKid"
-                    name="ck_id[]"
-                    defaultValue={59}
-                  />
-                </td>
-                            <td className="textdd">{data.title}</td>
-                            <td className="textdd"></td>
-                            <td className="textdd">{data.discription}</td>
-                            <td className="textdd">{data.category}</td>
-                            <td className="textdd">{data.price}</td>
-                            <td className="textdd"></td>
-                            <td className="textdd"></td>
-                            <td className="textdd">{data.description}</td>
-                            
-                        </tr>
-                    )
-                })
-            } */}
             </tbody>
             <tbody>
-              <tr className="textbody">
+              <tr className="textbodylist">
                 <td>
                   <input
                     type="checkbox"
@@ -173,7 +131,7 @@ function Book1() {
              <label className="labellabelinfo">Pay at home</label><br />
              </td>
              <td className="textdd">
-             <label className="labellabelsuccess"> Completed</label><br />
+             <label className="labellabeldanger"> Booking Cancel</label><br />
              </td>
              <td className="textdd">
               Mohammad Rizwan<br/>
@@ -246,128 +204,6 @@ function Book1() {
              </td>
              <td className="textdd">
             
-             </td>
-              </tr>
-              <tr className="textbody">
-                <td>
-                  <input
-                    type="checkbox"
-                    className="checkCKid"
-                    name="ck_id[]"
-                    defaultValue={59}
-                  />
-                </td>
-                <td className="textdd">
-                  59 / OD157715319
-                  <br />
-                  01/05/2022
-                  <br />
-                  <label className="labellabelprimary">Beawar</label>
-                </td>
-                <td className="textdd">
-                  Subhashsoni <br /> 9828410020{" "}
-                </td>
-                <td className="textdd">
-                  17 /May 22
-                  <br />
-                  09:00AM - 12:00PM{" "}
-                </td>
-                <td className="textdd">
-                  <label class="labellabelsuccess">Electrician</label>
-                  <br />
-                  <label class="labellabelprimary">MCB and fuse</label>
-                  <br />
-                </td>
-                <td className="textdd">₹ 269</td>
-                <td className="textdd">
-                  <a className="btnbtnprimary">
-                    <i className="fafaeye">
-                      <Visibility fontSize="small" />
-                      Short View
-                    </i>
-                  </a>
-                  <a className="btnbtndangerbtn" title="Edit">
-                    <i className="fafaeye">
-                      <Visibility fontSize="small" />
-                      View
-                    </i>
-                  </a>
-                </td>
-                <td className="textdd">
-             <label className="labellabelinfo">Pay at home</label><br />
-             </td>
-             <td className="textdd">
-             <label className="labellabelsuccess"> Completed</label><br />
-             </td>
-             <td className="textdd">
-              Mohammad Rizwan<br/>
-            (9829990521)<br/>
-             </td>
-             <td className="textdd">
-            
-             </td>
-             <td className="textdd">
-            
-             </td>
-              </tr>
-              <tr className="textbody">
-                <td>
-                  <input
-                    type="checkbox"
-                    className="checkCKid"
-                    name="ck_id[]"
-                    defaultValue={59}
-                  />
-                </td>
-                <td className="textdd">
-                  59 / OD157715319
-                  <br />
-                  01/05/2022
-                  <br />
-                  <label className="labellabelprimary">Beawar</label>
-                </td>
-                <td className="textdd">
-                  Subhashsoni <br /> 9828410020{" "}
-                </td>
-                <td className="textdd">
-                  17 /May 22
-                  <br />
-                  09:00AM - 12:00PM{" "}
-                </td>
-                <td className="textdd">
-                  <label class="labellabelsuccess">Electrician</label>
-                  <br />
-                  <label class="labellabelprimary">MCB and fuse</label>
-                  <br />
-                </td>
-                <td className="textdd">₹ 269</td>
-                <td className="textdd">
-                  <a className="btnbtnprimary">
-                    <i className="fafaeye">
-                      <Visibility fontSize="small" />
-                      Short View
-                    </i>
-                  </a>
-                  <a className="btnbtndangerbtn" title="Edit">
-                    <i className="fafaeye">
-                      <Visibility fontSize="small" />
-                      View
-                    </i>
-                  </a>
-                </td>
-                <td className="textdd">
-             <label className="labellabelinfo">Pay at home</label><br />
-             </td>
-             <td className="textdd">
-             <label className="labellabelsuccess">Completed</label><br />
-             </td>
-             <td className="textdd">
-              Mohammad Rizwan<br/>
-            (9829990521)<br/>
-             </td>
-             <td className="textdd">
-             </td>
-             <td className="textdd">
              </td>
               </tr>
               <tr className="textbodylist">
@@ -430,7 +266,7 @@ function Book1() {
              <td className="textdd">
              </td>
               </tr>
-              <tr className="textbody">
+              <tr className="textbodylist">
                 <td>
                   <input
                     type="checkbox"
@@ -479,15 +315,17 @@ function Book1() {
              <label className="labellabelinfo">Pay at home</label><br />
              </td>
              <td className="textdd">
-             <label className="labellabelsuccess"> Completed</label><br />
+             <label className="labellabeldanger"> Booking Cancel</label><br />
              </td>
              <td className="textdd">
               Mohammad Rizwan<br/>
             (9829990521)<br/>
              </td>
              <td className="textdd">
+            
              </td>
              <td className="textdd">
+            
              </td>
               </tr>
             </tbody>
@@ -495,7 +333,8 @@ function Book1() {
         </div>
       </form>
     </div>
+    </div>
   );
 }
 
-export default Book1;
+export default InactiveBook;

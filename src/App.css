@@ -1,6 +1,9 @@
 .container{
     display: flex;
 }
+.booking{
+    flex: 4;
+}
 
 
 .link{
