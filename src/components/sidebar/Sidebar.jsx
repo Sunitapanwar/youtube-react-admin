@@ -15,6 +15,22 @@ export default function Sidebar() {
  const [selectedOption, setSelectedOption] = useState(null);
 //  const [value, setValue] = useState();
 
+const sunita=async()=>{
+  try {
+    const res= await fetch("");
+    if (!res.ok) {
+      throw new Error ("something wrong");
+    }
+    const response=res.json();
+    console.log(response);
+  } catch (error) {
+    
+  }
+
+}
+
+
+
 function onClick(){
   SETSHOW(!SHOW);
 }; 
@@ -52,8 +68,6 @@ function onClick(){
    
               )}
 
-              
-             
               <li className="sidebarListItem">
                 <LocationOn className="sidebarIcon"/>
                 Location Manage
