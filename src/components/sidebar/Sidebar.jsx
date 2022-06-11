@@ -6,11 +6,13 @@ import {
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Select from 'react-select';
 
 
 export default function Sidebar() {
  const [show, setShow] = useState(false);
  const [SHOW, SETSHOW]=useState(false);
+ const [selectedOption, setSelectedOption] = useState(null);
 //  const [value, setValue] = useState();
 
 function onClick(){
@@ -51,20 +53,8 @@ function onClick(){
               )}
              
               <li className="sidebarListItem">
-                <LocationOn className="sidebarIcon" onClick={onClick}/>
+                <LocationOn className="sidebarIcon"/>
                 Location Manage
-                {SHOW && (
-                <div className="treeviewmenu" >
-                <ul  className="treeview">
-                <li className="treelist"><span>All Booking</span></li>
-                <li className="treelist"><span>New Booking</span></li>
-                <li className="treelist"><span>Confirm Booking</span></li>
-                <li className="treelist"><span>InActive Booking</span></li>
-                <li className="treelist"><span>Carts Booking</span></li></ul>
-                </div>
-   
-              )}
-          
               </li>
               <Link to="/products" className="link">
               <li className="sidebarListItem" >
@@ -100,6 +90,7 @@ function onClick(){
                 <AddCircle className="sidebarIcon"/>
                 Training Status
               </li>
+                
             </ul>
           </div>
         </div>
