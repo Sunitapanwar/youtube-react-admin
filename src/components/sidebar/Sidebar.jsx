@@ -1,53 +1,26 @@
 import "./sidebar.css";
 import {
-  Dashboard,Book,
-  LocationOn,Category,PeopleAlt,Redeem,
-  StoreMallDirectory,DirectionsCar,AddShoppingCart,Build,CreateNewFolder,AddCircle,RemoveCircle,ArrowDropDown
+  Dashboard,Book,LocationOn,Category,PeopleAlt,Redeem,
+  StoreMallDirectory,DirectionsCar,Build,AddCircle
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import Select from 'react-select';
+import { useEffect, useState } from "react";
 
 
 export default function Sidebar() {
- const [show, setShow] = useState(false);
- const [SHOW, SETSHOW]=useState(false);
- const [selectedOption, setSelectedOption] = useState(null);
-//  const [value, setValue] = useState();
-
-const sunita=async()=>{
-  try {
-    const res= await fetch("");
-    if (!res.ok) {
-      throw new Error ("something wrong");
-    }
-    const response=res.json();
-    console.log(response);
-  } catch (error) {
-    
-  }
-
-}
-
-
-
-function onClick(){
-  SETSHOW(!SHOW);
-}; 
+const [show, setShow] = useState(false);
 
  function onClick(){
    setShow(!show);
  }
-
-
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
           <div className="sidebarTitle">
-            <ul className="sidebarList">
+            <ul className="sidebarList active">
             <Link to="/" className="link">
-            <li className="sidebarListItem active">
+            <li className="sidebarListItem">
               <Dashboard className="sidebarIcon" />
               Home
             </li>
