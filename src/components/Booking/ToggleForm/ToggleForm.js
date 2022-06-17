@@ -1,8 +1,8 @@
 import React from "react";
-// import { Accordion } from "react-bootstrap";
 import { useState } from "react";
 import "./toggle.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
+
+
 
 
 const kk = async () => {
@@ -17,7 +17,6 @@ const kk = async () => {
     console.log(error);
   }
 };
-
 
 function Toggleform() {
   const [show, setShow] = useState(false);
@@ -52,9 +51,7 @@ function Toggleform() {
                   </div>
                   <div className="colContainer">
                     <div className="formgroup">
-                      <label className="formLabel">
-                        Email/Mobile No
-                      </label>
+                      <label className="formLabel">Email/Mobile No</label>
                       <input
                         type=" text"
                         className="formcontrol"
@@ -122,29 +119,29 @@ function Toggleform() {
                       </div>
                     </div>
                   </div>
-                  </div>
-                  <div className="colcontentcc">
-                    <button type="submit" className="btnbtnwarning">
-                      <i className="fafasearch" aria-hidden="true" />
-                      &nbsp;Search
-                    </button>
-                    <span href="https://nearone.co.in/oc-admin/bookings">
-                      <input
-                       className="btnbtnsecondary"
-                        type="button"
-                        defaultValue="Reset"
-                      />
-                    </span>
-                    <button
-                      type="submit"
-                      name="billing"
-                      value="billing"
-                      className="btnbtndanger"
-                    >
-                      <i className="fafiletext" aria-hidden="true" />
-                      &nbsp;Get pdf
-                    </button>
-                  </div>
+                </div>
+                <div className="colcontentcc">
+                  <button type="submit" className="btnbtnwarning">
+                    <i className="fafasearch" aria-hidden="true" />
+                    &nbsp;Search
+                  </button>
+                  <span href="https://nearone.co.in/oc-admin/bookings">
+                    <input
+                      className="btnbtnsecondary"
+                      type="button"
+                      defaultValue="Reset"
+                    />
+                  </span>
+                  <button
+                    type="submit"
+                    name="billing"
+                    value="billing"
+                    className="btnbtndanger"
+                  >
+                    <i className="fafiletext" aria-hidden="true" />
+                    &nbsp;Get pdf
+                  </button>
+                </div>
               </form>
             </div>
           </div>

@@ -34,10 +34,10 @@
   align-items: center;
   border-radius: 5px;
 }
-
 .sidebarListItem.active,
 .sidebarListItem:hover {
   background-color: white;
+  color: blue;
 }
 
 .sidebarIcon{
@@ -46,16 +46,25 @@
 }
 .treeviewmenu{
   background-color: white;
-  border-radius: 5px;
+  /* border-radius: 1px; */
   color: rgb(11, 6, 78);
-}
-.treeview{
-  /* background-color: red; */
 }
 .treelist{
   list-style-type: none;
+  margin-left: 0px;
   padding: 6px;
   font-weight: 600;
   cursor: pointer;
-  /* background-color: white; */
+  background-color: white;
+ 
 }
+.treelistitem{
+  margin-left: 28px;
+}
+
+.treelist.active,
+.treelist:hover{
+  background-color: grey;
+  color: blue;
+ }
+ 
